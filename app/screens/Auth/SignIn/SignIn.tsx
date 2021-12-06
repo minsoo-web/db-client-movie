@@ -1,9 +1,11 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import { NavigationProps } from '~/@types/navigation';
+
 import { vw } from '~/constants/Size';
 import * as Styled from './Singin.style';
 
-const SignIn = () => {
+const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
   return (
     <Styled.Constainer>
       <Styled.TitleWrapper>
@@ -16,12 +18,14 @@ const SignIn = () => {
         <Styled.TextInput placeholder="비밀번호를 입력해주세요." />
       </Styled.FormWrapper>
 
-      <Styled.LoginButton>
+      <Styled.LoginButton
+        onPress={() => navigation.reset({ routes: [{ name: 'Tabs' }] })}>
         <Styled.ButtonLabel>로그인</Styled.ButtonLabel>
       </Styled.LoginButton>
 
       <Styled.LinkWrapper>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.push('Auth', { screen: 'FindPw' })}>
           <Styled.LinkText
             style={{
               paddingRight: vw(20),
@@ -31,7 +35,8 @@ const SignIn = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={{ borderLeftWidth: 1, borderLeftColor: '#666' }}>
+          style={{ borderLeftWidth: 1, borderLeftColor: '#666' }}
+          onPress={() => navigation.push('Auth', { screen: 'SignUpForms' })}>
           <Styled.LinkText
             style={{
               paddingLeft: vw(20),

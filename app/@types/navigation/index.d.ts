@@ -1,6 +1,11 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 declare module NavigationProps {
+  export interface RootNavigation {
+    navigation: NativeStackNavigationProp<RootStackParamList, 'Auth'>;
+  }
+
   export type RootStackParamList = {
     Auth: NavigatorScreenParams<AuthParamList> | undefined;
     Tabs: NavigatorScreenParams<TabParamList> | undefined;
