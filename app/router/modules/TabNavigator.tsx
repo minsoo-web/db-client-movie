@@ -7,8 +7,26 @@ const Tab = createBottomTabNavigator<NavigationProps.TabParamList>();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Tabs.Home} />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarIcon: () => null,
+        tabBarLabelPosition: 'beside-icon',
+        title: '기업 이름',
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={Tabs.Home}
+        options={{
+          tabBarLabel: '홈',
+        }}
+      />
+      <Tab.Screen
+        name="MyPage"
+        component={Tabs.MyPage}
+        options={{
+          tabBarLabel: '마이페이지',
+        }}
+      />
     </Tab.Navigator>
   );
 };

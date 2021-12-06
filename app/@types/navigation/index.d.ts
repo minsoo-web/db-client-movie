@@ -9,6 +9,7 @@ declare module NavigationProps {
   export type RootStackParamList = {
     Auth: NavigatorScreenParams<AuthParamList> | undefined;
     Tabs: NavigatorScreenParams<TabParamList> | undefined;
+    MyPage: NavigatorScreenParams<MyPageParamList> | undefined;
   };
 
   export type AuthParamList = {
@@ -22,5 +23,11 @@ declare module NavigationProps {
 
   export type TabParamList = {
     Home: undefined; // 메인 화면 Main_Page_001
+    MyPage: undefined;
+  };
+
+  type MyPageParamList = {
+    ProfileModify: undefined;
+    ReservationList: undefined;
   };
 }
