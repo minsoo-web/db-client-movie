@@ -26,10 +26,17 @@ const AuthNavigator = ({ navigation }: NavigationProps.RootNavigation) => {
             </TouchableOpacity>
           ),
       }}>
-      <Stack.Screen name="SignIn" component={Auth.SignIn} />
+      <Stack.Screen
+        name="SignIn"
+        component={Auth.SignIn}
+        options={{ title: '로그인' }}
+      />
       <Stack.Screen name="SignUpForms" component={Auth.SignUp} />
-      <Stack.Screen name="FindPw" component={Auth.FindPw} />
-      <Stack.Screen name="FindPwNew" component={Auth.FindPwNew} />
+      <Stack.Screen
+        name="FindPw"
+        component={Auth.FindPw}
+        options={{ title: '비밀번호 찾기' }}
+      />
     </Stack.Navigator>
   );
 };
