@@ -1,4 +1,4 @@
-import authNavigator from './AuthNavigator';
+import AuthNavigator from './AuthNavigator';
 import TabNavigator from './TabNavigator';
 
-export { authNavigator, TabNavigator };
+export { AuthNavigator, TabNavigator };

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { authNavigator, TabNavigator } from './modules';
+import { AuthNavigator, TabNavigator } from './modules';
 
 import { NavigationProps } from '~/@types/navigation';
 
@@ -20,7 +20,7 @@ const index = () => {
           animation: 'slide_from_right',
           orientation: 'portrait',
         }}>
-        <Stack.Screen name="Auth" component={authNavigator} />
+        <Stack.Screen name="Auth" component={AuthNavigator} />
         <Stack.Screen name="Tabs" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -6,14 +6,15 @@ import { NavigationProps } from '~/@types/navigation';
 
 const Stack = createNativeStackNavigator<NavigationProps.AuthParamList>();
 
-const authNavigator = () => {
-  // todo 로그인 여부 판단
-
+const AuthNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{}}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="SignIn" component={Auth.SignIn} />
     </Stack.Navigator>
   );
 };
 
-export default authNavigator;
+export default AuthNavigator;
