@@ -41,9 +41,7 @@ const MovieListItem = (props: Movie.Movie) => {
 
         <Image
           source={{ uri: props.posterUrl }}
-          onLoadEnd={() => {
-            console.log('object');
-          }}
+          onLoadEnd={() => setImageLoading(false)}
           style={{
             width: '100%',
             height: '100%',

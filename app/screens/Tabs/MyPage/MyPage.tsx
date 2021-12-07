@@ -4,7 +4,6 @@ import * as Styled from './MyPage.style';
 import fbAuth from '@react-native-firebase/auth';
 import fbStore from '@react-native-firebase/firestore';
 import { NavigationProps } from '~/@types/navigation';
-import movies from '~/constants/data/movies';
 import { vw } from '~/constants/Size';
 
 interface UserDto {
@@ -76,7 +75,7 @@ const MyPage = ({ navigation }: NavigationProps.RootNavigation) => {
           onPress={() =>
             navigation.push('MyPage', { screen: 'ProfileModify' })
           }>
-          <Text>회원정보 수정</Text>
+          <Text>비밀번호 변경</Text>
         </Styled.ListItem>
       </View>
     </Styled.Container>

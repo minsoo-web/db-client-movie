@@ -33,7 +33,7 @@ const SignUp = ({ navigation }: NavigationProps.RootNavigation) => {
 
     const uid = fbAuth().currentUser?.uid;
 
-    await fbStore().collection('users').add({
+    await fbStore().collection('users').doc(uid).set({
       id: uid,
       birth,
       email,
