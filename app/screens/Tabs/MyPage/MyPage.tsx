@@ -5,6 +5,7 @@ import fbAuth from '@react-native-firebase/auth';
 import fbStore from '@react-native-firebase/firestore';
 import { NavigationProps } from '~/@types/navigation';
 import movies from '~/constants/data/movies';
+import { vw } from '~/constants/Size';
 
 interface UserDto {
   id: string;
@@ -60,6 +61,24 @@ const MyPage = ({ navigation }: NavigationProps.RootNavigation) => {
           </TouchableOpacity>
         </View>
       </Styled.Header>
+
+      {/*  */}
+      <View style={{ paddingHorizontal: vw(20) }}>
+        <Styled.ListItem>
+          <Text>예매 정보 확인</Text>
+        </Styled.ListItem>
+        <Styled.SizedBox />
+        <Styled.ListItem>
+          <Text>예매 취소 리스트</Text>
+        </Styled.ListItem>
+        <Styled.SizedBox />
+        <Styled.ListItem
+          onPress={() =>
+            navigation.push('MyPage', { screen: 'ProfileModify' })
+          }>
+          <Text>회원정보 수정</Text>
+        </Styled.ListItem>
+      </View>
     </Styled.Container>
   );
 };

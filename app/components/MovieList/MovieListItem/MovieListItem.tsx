@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React from 'react';
-import { Text, Image } from 'react-native';
+import { Text, Image, ActivityIndicator, View } from 'react-native';
 import { Movie } from '~/@types/movie';
 import { NavigationProps } from '~/@types/navigation';
 import * as Styled from './MovieListItem.style';
@@ -12,6 +12,8 @@ const MovieListItem = (props: Movie.Movie) => {
     'Tabs'
   > = useNavigation();
 
+  const [imageLoading, setImageLoading] = useState<boolean>(true);
+
   return (
     <Styled.Container
       activeOpacity={1}
@@ -21,15 +23,34 @@ const MovieListItem = (props: Movie.Movie) => {
           params: { movieTitle: props.movieNm, movieId: props.movieCd },
         })
       }>
-      <Image
-        source={{ uri: props.posterUrl }}
+      <View
         style={{
+          position: 'relative',
           width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
           height: undefined,
           aspectRatio: 0.7,
-          borderRadius: 4,
-        }}
-      />
+        }}>
+        <ActivityIndicator
+          style={{
+            position: 'absolute',
+            display: imageLoading ? 'flex' : 'none',
+          }}
+        />
+
+        <Image
+          source={{ uri: props.posterUrl }}
+          onLoadEnd={() => {
+            console.log('object');
+          }}
+          style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: 4,
+          }}
+        />
+      </View>
       <Styled.Title>{props.movieNm}</Styled.Title>
       <Text>평점: {props.rate}</Text>
     </Styled.Container>

@@ -18,3 +18,11 @@ export const Header = styled.View`
 export const UserName = styled.Text`
   font-size: ${vw(25)}px;
 `;
+
+export const ListItem = styled.TouchableOpacity`
+  padding: ${vw(10)}px 0;
+`;
+
+export const SizedBox = styled.View`
+  height: ${vw(10)}px;
+`;

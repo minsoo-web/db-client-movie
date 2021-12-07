@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AuthNavigator, TabNavigator, MovieNavigator } from './modules';
+import {
+  AuthNavigator,
+  TabNavigator,
+  MovieNavigator,
+  MyPageNavigator,
+} from './modules';
 import { NavigationProps } from '~/@types/navigation';
 import fbAuth from '@react-native-firebase/auth';
 
@@ -22,6 +27,7 @@ const index = ({ navigation }: NavigationProps.RootNavigation) => {
         <Stack.Screen name="Auth" component={AuthNavigator} />
         <Stack.Screen name="Tabs" component={TabNavigator} />
         <Stack.Screen name="Movie" component={MovieNavigator} />
+        <Stack.Screen name="MyPage" component={MyPageNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
