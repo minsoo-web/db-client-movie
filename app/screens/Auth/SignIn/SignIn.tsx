@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { NavigationProps } from '~/@types/navigation';
 
 import { vw } from '~/constants/Size';
 import * as Styled from './Singin.style';
+import fbAuth from '@react-native-firebase/auth';
 
 const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignInButtonPress = async () => {
+    try {
+      await fbAuth().signInWithEmailAndPassword(email, password);
+      navigation.reset({ routes: [{ name: 'Tabs' }] });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Styled.Constainer>
       <Styled.TitleWrapper>
@@ -13,13 +27,21 @@ const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
       </Styled.TitleWrapper>
 
       <Styled.FormWrapper>
-        <Styled.TextInput placeholder="아이디를 입력해주세요." />
+        <Styled.TextInput
+          placeholder="아이디를 입력해주세요."
+          value={email}
+          onChangeText={setEmail}
+        />
 
-        <Styled.TextInput placeholder="비밀번호를 입력해주세요." />
+        <Styled.TextInput
+          secureTextEntry
+          placeholder="비밀번호를 입력해주세요."
+          value={password}
+          onChangeText={setPassword}
+        />
       </Styled.FormWrapper>
 
-      <Styled.LoginButton
-        onPress={() => navigation.reset({ routes: [{ name: 'Tabs' }] })}>
+      <Styled.LoginButton onPress={handleSignInButtonPress}>
         <Styled.ButtonLabel>로그인</Styled.ButtonLabel>
       </Styled.LoginButton>
 

@@ -35,7 +35,7 @@ export const Title = styled.Text`
 export const TitleEn = styled.Text`
   font-size: ${vw(12)}px;
   color: #666;
-  margin-bottom: ${vw(10)};
+  margin-bottom: ${vw(10)}px;
 `;
 
 export const SizedBox = styled.View`

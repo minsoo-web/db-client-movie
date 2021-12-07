@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import { AuthNavigator, TabNavigator, MovieNavigator } from './modules';
-
 import { NavigationProps } from '~/@types/navigation';
+import fbAuth from '@react-native-firebase/auth';
 
 const Stack = createNativeStackNavigator<NavigationProps.RootStackParamList>();
 
-const index = () => {
-  const initialRouteName = true ? 'Auth' : 'Tabs';
+const index = ({ navigation }: NavigationProps.RootNavigation) => {
+  const initialRouteName = fbAuth().currentUser ? 'Tabs' : 'Auth';
 
   return (
     <NavigationContainer>

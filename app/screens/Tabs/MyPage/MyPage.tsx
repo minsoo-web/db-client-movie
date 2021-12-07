@@ -1,11 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import * as Styled from './MyPage.style';
+import fbAuth from '@react-native-firebase/auth';
+import { NavigationProps } from '~/@types/navigation';
 
-const MyPage = () => {
+const MyPage = ({ navigation }: NavigationProps.RootNavigation) => {
+  const handlesignOut = async () => {
+    await fbAuth().signOut();
+    navigation.reset({ routes: [{ name: 'Auth' }] });
+  };
   return (
-    <View>
-      <Text>hi</Text>
-    </View>
+    <Styled.Container>
+      <TouchableOpacity onPress={handlesignOut}>
+        <Text>로그아웃</Text>
+      </TouchableOpacity>
+    </Styled.Container>
   );
 };
 

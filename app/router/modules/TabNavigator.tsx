@@ -17,14 +17,14 @@ const TabNavigator = () => {
         name="Home"
         component={Tabs.Home}
         options={{
-          tabBarLabel: '홈',
+          tabBarLabel: '영화',
         }}
       />
       <Tab.Screen
         name="MyPage"
         component={Tabs.MyPage}
         options={{
-          tabBarLabel: '마이페이지',
+          tabBarLabel: 'MY',
         }}
       />
     </Tab.Navigator>

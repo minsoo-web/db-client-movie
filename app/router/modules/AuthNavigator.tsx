@@ -31,7 +31,11 @@ const AuthNavigator = ({ navigation }: NavigationProps.RootNavigation) => {
         component={Auth.SignIn}
         options={{ title: '로그인' }}
       />
-      <Stack.Screen name="SignUpForms" component={Auth.SignUp} />
+      <Stack.Screen
+        name="SignUpForms"
+        component={Auth.SignUp}
+        options={{ title: '회원가입' }}
+      />
       <Stack.Screen
         name="FindPw"
         component={Auth.FindPw}
