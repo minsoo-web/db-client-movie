@@ -20,7 +20,7 @@ export const Poster = styled.Image`
   width: ${vw(112)}px;
   height: undefined;
   aspect-ratio: ${112 / 158.16};
-  border-radius: 4;
+  border-radius: 4px;
 `;
 
 export const MovieInfo = styled.View`
