@@ -1,5 +1,5 @@
-export default [
-  {
+export default {
+  20210087: {
     movieCd: '20210087',
     movieNm: '듄',
     movieNmEn: 'DUNE',
@@ -154,7 +154,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20218052: {
     movieCd: '20218052',
     movieNm: '베놈 2: 렛 데어 비 카니지',
     posterUrl:
@@ -271,7 +271,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20210865: {
     movieCd: '20210865',
     movieNm: '고장난 론',
     posterUrl:
@@ -366,7 +366,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20211102: {
     movieCd: '20211102',
     movieNm: '더 하더 데이 폴',
     posterUrl:
@@ -447,7 +447,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20190815: {
     movieCd: '20190815',
     movieNm: '보이스',
     posterUrl:
@@ -2570,7 +2570,7 @@ export default [
       },
     ],
   },
-  {
+  20210587: {
     movieCd: '20210587',
     movieNm: '아네트',
     posterUrl:
@@ -2659,7 +2659,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20191061: {
     movieCd: '20191061',
     movieNm: '007 노 타임 투 다이',
     posterUrl:
@@ -2782,7 +2782,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20219115: {
     movieCd: '20219115',
     movieNm: '라스트 듀얼: 최후의 결투',
     posterUrl:
@@ -2868,7 +2868,7 @@ export default [
     ],
     staffs: [],
   },
-  {
+  20200474: {
     movieCd: '20200474',
     movieNm: '기적',
     posterUrl:
@@ -4729,7 +4729,7 @@ export default [
       },
     ],
   },
-  {
+  20210662: {
     movieCd: '20210662',
     movieNm: '애프터: 관계의 함정',
     posterUrl:
@@ -4795,4 +4795,4 @@ export default [
     ],
     staffs: [],
   },
-];
+};

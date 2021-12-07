@@ -10,6 +10,7 @@ declare module NavigationProps {
     Auth: NavigatorScreenParams<AuthParamList> | undefined;
     Tabs: NavigatorScreenParams<TabParamList> | undefined;
     MyPage: NavigatorScreenParams<MyPageParamList> | undefined;
+    Movie: NavigatorScreenParams<MovieParamList> | undefined;
   };
 
   export type AuthParamList = {
@@ -29,5 +30,12 @@ declare module NavigationProps {
   type MyPageParamList = {
     ProfileModify: undefined;
     ReservationList: undefined;
+  };
+
+  export type MovieParamList = {
+    MovieDetail: {
+      movieTitle: string;
+      movieId: string;
+    };
   };
 }

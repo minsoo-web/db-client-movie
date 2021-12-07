@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { AuthNavigator, TabNavigator } from './modules';
+import { AuthNavigator, TabNavigator, MovieNavigator } from './modules';
 
 import { NavigationProps } from '~/@types/navigation';
 
@@ -22,6 +22,7 @@ const index = () => {
         }}>
         <Stack.Screen name="Auth" component={AuthNavigator} />
         <Stack.Screen name="Tabs" component={TabNavigator} />
+        <Stack.Screen name="Movie" component={MovieNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
