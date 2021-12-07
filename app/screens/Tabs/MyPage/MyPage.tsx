@@ -5,6 +5,7 @@ import fbAuth from '@react-native-firebase/auth';
 import fbStore from '@react-native-firebase/firestore';
 import { NavigationProps } from '~/@types/navigation';
 import { vw } from '~/constants/Size';
+import theater from '~/constants/data/theater';
 
 interface UserDto {
   id: string;
@@ -33,6 +34,11 @@ const MyPage = ({ navigation }: NavigationProps.RootNavigation) => {
         const data: any = user.docs[0].data();
         setUserInfo(data);
       });
+
+    // 영화관 셋업
+    // theater.forEach(data => {
+    //   fbStore().collection('theater').doc(data.code).set(data);
+    // });
   }, []);
 
   const handlesignOut = async () => {
