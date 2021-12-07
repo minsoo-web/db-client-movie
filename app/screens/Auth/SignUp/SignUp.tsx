@@ -4,8 +4,9 @@ import { vw } from '~/constants/Size';
 import * as Styled from './SignUp.style';
 import fbAuth from '@react-native-firebase/auth';
 import fbStore from '@react-native-firebase/firestore';
+import { NavigationProps } from '~/@types/navigation';
 
-const SignUp = () => {
+const SignUp = ({ navigation }: NavigationProps.RootNavigation) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -30,7 +31,10 @@ const SignUp = () => {
         }
       });
 
+    const uid = fbAuth().currentUser?.uid;
+
     await fbStore().collection('users').add({
+      id: uid,
       birth,
       email,
       password,
@@ -38,6 +42,7 @@ const SignUp = () => {
     });
 
     setLoading(false);
+    navigation.reset({ routes: [{ name: 'Tabs' }] });
   };
 
   return (

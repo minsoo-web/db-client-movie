@@ -11,7 +11,7 @@ const TabNavigator = () => {
       screenOptions={{
         tabBarIcon: () => null,
         tabBarLabelPosition: 'beside-icon',
-        title: '기업 이름',
+        title: 'DB 코딩보험',
       }}>
       <Tab.Screen
         name="Home"

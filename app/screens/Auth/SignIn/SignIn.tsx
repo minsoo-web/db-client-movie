@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, ActivityIndicator } from 'react-native';
 import { NavigationProps } from '~/@types/navigation';
 
 import { vw } from '~/constants/Size';
@@ -13,9 +13,13 @@ const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
 
   const handleSignInButtonPress = async () => {
     try {
+      setLoading(true);
+
       await fbAuth().signInWithEmailAndPassword(email, password);
+      setLoading(false);
       navigation.reset({ routes: [{ name: 'Tabs' }] });
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -23,7 +27,7 @@ const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
   return (
     <Styled.Constainer>
       <Styled.TitleWrapper>
-        <Styled.Title>회사 로고</Styled.Title>
+        <Styled.Title>DB 코딩보험</Styled.Title>
       </Styled.TitleWrapper>
 
       <Styled.FormWrapper>
@@ -42,7 +46,11 @@ const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
       </Styled.FormWrapper>
 
       <Styled.LoginButton onPress={handleSignInButtonPress}>
-        <Styled.ButtonLabel>로그인</Styled.ButtonLabel>
+        {loading ? (
+          <ActivityIndicator color="#fff" />
+        ) : (
+          <Styled.ButtonLabel>로그인</Styled.ButtonLabel>
+        )}
       </Styled.LoginButton>
 
       <Styled.LinkWrapper>
