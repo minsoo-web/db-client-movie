@@ -69,13 +69,13 @@ const MyPage = ({ navigation }: NavigationProps.RootNavigation) => {
 
       {/*  */}
       <View style={{ paddingHorizontal: vw(20) }}>
-        <Styled.ListItem>
+        {/* <Styled.ListItem>
           <Text>예매 정보 확인</Text>
         </Styled.ListItem>
         <Styled.SizedBox />
         <Styled.ListItem>
           <Text>예매 취소 리스트</Text>
-        </Styled.ListItem>
+        </Styled.ListItem> */}
         <Styled.SizedBox />
         <Styled.ListItem
           onPress={() =>

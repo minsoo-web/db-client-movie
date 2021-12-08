@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, Alert } from 'react-native';
 import { Movie } from '~/@types/movie';
 import movie from '~/constants/data/movie';
 import * as Styled from './MovieDetail.style';
@@ -107,7 +107,7 @@ const MovieDetail = ({
           />
         </View>
       </View>
-      <Styled.LoginButton>
+      <Styled.LoginButton onPress={() => Alert.alert('준비 중인 기능입니다.')}>
         <Styled.ButtonLabel>지금 예매하기</Styled.ButtonLabel>
       </Styled.LoginButton>
     </Styled.Container>

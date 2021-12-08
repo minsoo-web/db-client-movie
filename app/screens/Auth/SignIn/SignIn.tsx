@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, ActivityIndicator } from 'react-native';
+import { TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
 import { NavigationProps } from '~/@types/navigation';
 
 import { vw } from '~/constants/Size';
@@ -18,9 +18,15 @@ const SignIn = ({ navigation }: NavigationProps.RootNavigation) => {
       await fbAuth().signInWithEmailAndPassword(email, password);
       setLoading(false);
       navigation.reset({ routes: [{ name: 'Tabs' }] });
-    } catch (error) {
+    } catch ({ code }: any) {
       setLoading(false);
-      console.log(error);
+      if (code === 'auth/user-not-found') {
+        Alert.alert('존재하지 않는 아이디입니다.');
+      } else if (code === 'auth/user-not-found') {
+        Alert.alert('비밀번호가 틀렸습니다.');
+      } else {
+        Alert.alert('알 수 없는 에러 발생');
+      }
     }
   };
 

@@ -24,6 +24,7 @@ declare module NavigationProps {
 
   export type TabParamList = {
     Home: undefined; // 메인 화면 Main_Page_001
+    Theater: undefined;
     MyPage: undefined;
   };
 

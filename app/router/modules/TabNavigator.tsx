@@ -17,7 +17,7 @@ const TabNavigator = () => {
         name="Home"
         component={Tabs.Home}
         options={{
-          tabBarLabel: '영화',
+          tabBarLabel: '상영중인 영화',
         }}
       />
       <Tab.Screen
